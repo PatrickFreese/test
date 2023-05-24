@@ -1,8 +1,10 @@
 //importo o mongoose
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
 //crio uma string de conexao cujo database se chama project
-mongoose.connect('mongodb://localhost:27017/project', {
+mongoose.connect(process.env.MONGODB,  {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
